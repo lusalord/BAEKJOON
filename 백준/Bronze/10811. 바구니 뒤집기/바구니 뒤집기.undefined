@@ -1,0 +1,31 @@
+#include <iostream>
+using namespace std;
+int main() 
+{
+	int n, m;
+	cin >> n >> m;
+
+	int baguni[101];
+
+	for (int i = 1; i <= n; i++) {
+		baguni[i] = i;
+	}
+	for (int i = 0; i < m; i++) {
+		int a, b;
+		cin >> a >> b;
+
+		// 구간 뒤집기
+		while (a < b) {
+			int temp = baguni[a];
+			baguni[a] = baguni[b];
+			baguni[b] = temp;
+			a++;
+			b--;
+		}
+	}
+
+	for (int i = 1; i <= n; i++) {
+		cout << baguni[i] << " ";
+	}
+	return 0;
+}
