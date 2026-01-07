@@ -1,0 +1,34 @@
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+int main()
+{
+	int n;
+	cin >> n;
+
+	int* arr = new int[n];
+	int c = 0;
+	int max = 0;
+
+	for (int i = 0; i < n; i++)
+	{
+		cin >> arr[i];
+	}
+
+	for (int i = 0; i < n; i++) {
+		if (arr[i] == 0 && c == 0) {
+			max++;
+			c = 1;
+		}
+		if (arr[i] == 1 && c == 1) {
+			max++;
+			c = 2;
+		}
+		if (arr[i] == 2 && c == 2) {
+			max++;
+			c = 0;
+		}
+	}
+	cout << max;
+}
