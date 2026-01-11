@@ -1,0 +1,19 @@
+#include <iostream>
+#include <algorithm>
+#include <vector>
+using namespace std;
+
+int main()
+{
+	int a;
+	cin >> a;
+
+	int cnt = 0;
+
+	for (int i = a; i > 0; i -= 5) {
+		cnt++;
+	}
+
+	cout << cnt;
+
+}
