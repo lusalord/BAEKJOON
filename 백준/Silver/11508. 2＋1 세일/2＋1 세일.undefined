@@ -1,0 +1,27 @@
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+int main()
+{
+    int a;
+    cin >> a;
+    
+    int* arr = new int[a];
+    
+    int cnt = 0;
+    
+    for(int i = 0; i < a; i++){
+        cin >> arr[i];
+    }
+    
+    sort(arr, arr + a, greater<int>());
+        
+    for(int i = 0; i < a; i++){
+        if(i % 3 != 2){
+            cnt += arr[i];
+        }
+    }
+    
+    cout << cnt;
+}
