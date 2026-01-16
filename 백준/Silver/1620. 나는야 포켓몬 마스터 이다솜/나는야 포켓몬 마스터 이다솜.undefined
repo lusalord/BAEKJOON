@@ -1,0 +1,42 @@
+#include <iostream>
+#include <cctype>
+#include <string>
+#include <algorithm>
+#include <map>
+
+using namespace std;
+
+string pokemon[100000];
+
+int main()
+{
+	map<string, int> p;
+	int n, m;
+	string s;
+	int num;
+
+	cin.tie(0);
+	ios::sync_with_stdio(0);
+
+	cin >> n >> m;
+
+	for (int i = 0; i < n; i++)
+	{
+		cin >> pokemon[i];
+		p.insert({pokemon[i], i});
+	}
+
+	for (int i = 0; i < m ; i++) 
+	{
+		cin >> s;
+		if(isdigit(s[0]) != 0) {
+			num = stoi(s) - 1;
+			cout << pokemon[num] << "\n";
+		}
+		else {
+			auto index = p.find(s);
+			cout << index->second + 1 << "\n";
+		}
+	}
+	return 0;
+}
