@@ -1,0 +1,27 @@
+#include <iostream>
+#include <map>
+
+using namespace std;
+#define FAST_IO ios::sync_with_stdio(false); cout.tie(NULL); cin.tie(NULL);
+
+int main() {
+    FAST_IO
+    
+    int n, m;
+    cin >> n >> m;
+    map<string, string> map;
+
+    for (int i = 0; i < n; i++) {
+        string key, value;
+        cin >> key >> value;
+        map[key] = value;
+    }
+
+    for(int i = 0; i < m; i++){
+        string key;
+        cin >> key;
+        cout << map[key] << endl;
+    }
+
+    return 0;
+}
